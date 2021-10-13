@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "include": [
     ".eslintrc.js",
+    "stylelint.config.js",
     "vite.config.ts"
   ]
 }

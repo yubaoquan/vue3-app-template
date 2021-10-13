@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const request = axios.create({
-  baseURL: '',
+  baseURL: import.meta.env.VITA_BASE_URL,
 });
 
 request.interceptors.request.use(() => {});

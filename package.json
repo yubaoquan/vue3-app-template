@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build:test": "vue-tsc --noEmit && vite build --mode test",
+    "build:sml": "vue-tsc --noEmit && vite build --mode sml",
+    "build:prod": "vue-tsc --noEmit && vite build --mode prod",
     "serve": "vite preview",
     "lint": "eslint ./src/**/*.{js,jsx,vue,ts,tsx} --fix",
     "prepare": "husky install"

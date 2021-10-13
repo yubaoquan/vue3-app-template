@@ -52,5 +52,6 @@ module.exports = {
       ignoreTemplateLiterals: true,
       ignoreRegExpLiterals: true,
     }],
+    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
   },
 };
