@@ -6,11 +6,12 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-strongly-recommended',
+    'airbnb-base',
     'airbnb-typescript/base',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
-  'parser': 'vue-eslint-parser',
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 13,
     parser: '@typescript-eslint/parser',
@@ -34,13 +35,10 @@ module.exports = {
     },
   },
   rules: {
-    indent: 'off',
-    '@typescript-eslint/indent': ['error', 2],
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'no-param-reassign': ['error', { props: false }],
     'no-console': 'off',
-    'quotes': 'off',
     '@typescript-eslint/quotes': ['error', 'single', { allowTemplateLiterals: true }],
     '@typescript-eslint/member-delimiter-style': 'error',
     'max-len': ['error', {
@@ -52,6 +50,5 @@ module.exports = {
       ignoreTemplateLiterals: true,
       ignoreRegExpLiterals: true,
     }],
-    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
   },
 };

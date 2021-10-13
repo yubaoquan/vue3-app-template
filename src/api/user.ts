@@ -12,8 +12,11 @@ interface Response<T = any> {
   data: T;
 }
 
-export const login = (data: ILoginForm) =>
-  apiGet<Response<ILoginResponse>>('/login', data);
+export const login = (data: ILoginForm) => apiGet<Response<ILoginResponse>>('/login', data);
 
-export const register = (data: IRegisterForm) =>
-  apiPost<Response<IRegisterResponse>>('/register', data);
+// eslint-disable-next-line arrow-body-style
+export const register = (data: IRegisterForm) => {
+  return apiPost<Response<IRegisterResponse>>('/register', data);
+};
+
+export const foo = () => apiGet('https://jsonplaceholder.typicode.com/todos/1');

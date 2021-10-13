@@ -4,14 +4,23 @@ const request = axios.create({
   baseURL: import.meta.env.VITA_BASE_URL,
 });
 
-request.interceptors.request.use(() => {});
-request.interceptors.response.use(() => {});
+request.interceptors.request.use(
+  (config) => config,
+  (error) => Promise.reject(error),
+);
+request.interceptors.response.use(
+  (response) => response,
+  (error) => Promise.reject(error),
+);
 
 export default request;
 
-export const apiGet = <T>(url: string, data: any, extOpt = []) => request.get<T>(url, {
-  data,
+export const apiGet = <T>(url: string, params = {}, extOpt = {}) => request.get<T>(url, {
+  params,
   ...extOpt,
 });
 
-export const apiPost = <T>(url: string, data: any, cfg = {}) => request.post<T>(url, data, cfg);
+// eslint-disable-next-line arrow-body-style
+export const apiPost = <T extends Object>(url: string, data: any, cfg = {}) => {
+  return request.post<T>(url, data || {}, cfg);
+};
