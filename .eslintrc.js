@@ -50,5 +50,9 @@ module.exports = {
       ignoreTemplateLiterals: true,
       ignoreRegExpLiterals: true,
     }],
+    'vue/max-attributes-per-line': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    'no-spaced-func': 'off',
   },
 };
