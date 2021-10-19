@@ -1,4 +1,5 @@
 import axios from 'axios';
+import type { AxiosRequestConfig } from 'axios';
 
 const request = axios.create({
   baseURL: import.meta.env.VITA_BASE_URL,
@@ -15,12 +16,14 @@ request.interceptors.response.use(
 
 export default request;
 
-export const apiGet = <T>(url: string, params = {}, extOpt = {}) => request.get<T>(url, {
-  params,
-  ...extOpt,
-});
+export const apiGet = <T>(
+  url: string,
+  params?: any,
+  cfg = {},
+) => request.get<T>(url, { params, ...cfg });
 
-// eslint-disable-next-line arrow-body-style
-export const apiPost = <T extends Object>(url: string, data: any, cfg = {}) => {
-  return request.post<T>(url, data || {}, cfg);
-};
+export const apiPost = <T, R>(
+  url: string,
+  data?: T,
+  cfg?: AxiosRequestConfig<T>,
+) => request.post<T, R>(url, data, cfg);
