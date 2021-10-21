@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { AxiosRequestConfig } from 'axios';
 
 const request = axios.create({
-  baseURL: import.meta.env.VITA_BASE_URL,
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 request.interceptors.request.use(
